@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-user-main-email',
-    '__version' => '0.0.1',
+    '__version' => '0.0.2',
     '__git' => 'git@github.com:getmim/lib-user-main-email.git',
     '__license' => 'MIT',
     '__author' => [
@@ -43,6 +43,8 @@ return [
                     'xpos' => 'right',
                     'xindex' => 0,
                     'rules' => [
+                        'required' => true,
+                        'empty' => false,
                         'email' => true,
                         'unique' => [
                             'model' => 'LibUser\\Library\\Fetcher',
