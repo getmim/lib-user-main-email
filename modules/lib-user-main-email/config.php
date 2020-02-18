@@ -2,7 +2,7 @@
 
 return [
     '__name' => 'lib-user-main-email',
-    '__version' => '0.0.2',
+    '__version' => '0.0.3',
     '__git' => 'git@github.com:getmim/lib-user-main-email.git',
     '__license' => 'MIT',
     '__author' => [
@@ -36,6 +36,26 @@ return [
     ],
     'libForm' => [
         'forms' => [
+            'admin.user.account' => [
+                'email' => [
+                    'type' => 'email',
+                    'label' => 'Email',
+                    'position' => 'top-left',
+                    'rules' => [
+                        'required' => true,
+                        'empty' => false,
+                        'email' => true,
+                        'unique' => [
+                            'model' => 'LibUser\\Library\\Fetcher',
+                            'field' => 'email',
+                            'self' => [
+                                'service' => 'req.param.id',
+                                'field' => 'id'
+                            ]
+                        ]
+                    ]
+                ]
+            ],
             'admin.me.setting.profile' => [
                 'email' => [
                     'type' => 'email',

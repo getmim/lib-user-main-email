@@ -7,8 +7,7 @@ return [
                 'type' => 'VARCHAR',
                 'length' => 150,
                 'attrs' => [
-                    'unique' => true,
-                    'null' => false
+                    'unique' => true
                 ],
                 'index' => 1100
             ]
